@@ -3,6 +3,7 @@ import ImageThumbnail from "../components/ImageThumbnail";
 import OcrSpace from "../lib/OcrSpace";
 import OcrResult from "../components/OcrResult";
 import ReactLoading from "react-loading";
+import FormUpload from "../components/FormUpload";
 
 function Home(props) {
   const [imageUrl, setImageUrl] = useState("");
@@ -27,22 +28,35 @@ function Home(props) {
     doOcrScanning();
   }, [imageUrl]);
 
+  const imageSample = [
+    "https://telegra.ph/file/6b37166d03088e2616fec.jpg",
+    "https://telegra.ph/file/a450a2b013bf24c22d782.jpg",
+    "http://34.67.235.246:8888/unsafe/600x600/https://crimesocial.web.id/uploadtesting/vGH4Ruw.jpg",
+    "https://telegra.ph/file/bddff6eedd979a201d5f9.jpg"
+  ];
+
   return (
-    <div className="lg:max-w-6xl max-w-full m-auto flex items-baseline mt-2">
-      <div className="w-3/12 p-3">
-        <h1 className="block mb-2 font-bold text-2xl border-b">
-          Sample Receipts
-        </h1>
-        <ImageThumbnail
-          onClick={onSetImageUrl}
-          imageUrl="https://telegra.ph/file/6b37166d03088e2616fec.jpg"
-        />
-        <ImageThumbnail
-          onClick={onSetImageUrl}
-          imageUrl="https://telegra.ph/file/bddff6eedd979a201d5f9.jpg"
-        />
+    <div className="lg:max-w-6xl max-w-full m-auto flex flex-col items-baseline mt-2">
+      <div className="w-full p-3 flex lg:flex-row flex-col">
+        <div className="lg:w-4/12 w-full pr-5">
+          <h1 className="block mb-2 font-bold text-2xl border-b">
+            Upload Receipts
+          </h1>
+          <FormUpload onSuccess={onSetImageUrl} />
+        </div>
+
+        <div className="lg:w-8/12 w-full ">
+          <h1 className="block mb-2 font-bold text-2xl border-b">
+            Use sample receipts
+          </h1>
+          <div className="flex flex-row">
+            {imageSample.map(item => {
+              return <ImageThumbnail onClick={onSetImageUrl} imageUrl={item} />;
+            })}
+          </div>
+        </div>
       </div>
-      <div className="w-9/12 p-3 ">
+      <div className="w-full p-3 ">
         <h1 className="block mb-2 font-bold text-2xl border-b">
           OCR Scanning Result
         </h1>

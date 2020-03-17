@@ -26,7 +26,7 @@ function OcrResult(props) {
           onClick={() => setViewOption(1)}
           className={`inline-block ${
             viewOption === 1 ? "bg-green-600" : "bg-gray-300 hover:bg-gray-500"
-          } text-white px-2 py-1 rounded-sm mx-1 focus:outline-none`}
+          } text-gray px-2 py-1 rounded-sm mx-1 focus:outline-none`}
         >
           Image Overlay
         </button>
@@ -34,7 +34,7 @@ function OcrResult(props) {
           onClick={() => setViewOption(2)}
           className={`inline-block ${
             viewOption === 2 ? "bg-green-600" : "bg-gray-300 hover:bg-gray-500"
-          } text-white px-2 py-1 rounded-sm mx-1 focus:outline-none`}
+          } text-gray px-2 py-1 rounded-sm mx-1 focus:outline-none`}
         >
           JSON Preview
         </button>
