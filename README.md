@@ -2,12 +2,12 @@
 
 ## Todo list
 
-- [] Create basic UI
-- [] Use sample images
-- [] Use https://ocr.space as OCR webservice
-- [] Show yellow box based on webservice result
-- [] Able to click the yellow box and show alert
-- [] Upload image
+- [x] Create basic UI
+- [x] Use sample images
+- [x] Use https://ocr.space as OCR webservice
+- [x] Show yellow box based on webservice result
+- [x] Able to click the yellow box and show alert
+- [x] Upload image
 
 ## How I built this
 
